@@ -19,4 +19,8 @@ public class User {
     private int age;
     private String email;
     private List<String> hobbies;
+
+    public String doSomethine() {
+        return "aaabbb";
+    }
 }

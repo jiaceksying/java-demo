@@ -9,6 +9,15 @@
 <input type="text" value="你好呀"/>
 <input type="text" value="你好呀"/>
 <input type="text" value="你好呀"/>
-jay,你好。this is a test message
+<#--我只是一个注释，我不会有任何输出  -->
+<#list users?sort as item>
+    <tr>
+        <td>${item.name}</td>
+        <td>${item.email}</td>
+        <td>${item.doSomethine()}</td>
+        <td>${users?size}</td>
+
+    </tr>
+</#list>
 </body>
 </html>
