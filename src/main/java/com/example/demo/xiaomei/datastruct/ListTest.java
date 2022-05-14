@@ -55,5 +55,48 @@ public class ListTest {
 //                c = a;
 //            }
 //        }
+        // 交集 差集 并集
+        List<String> result = new ArrayList<>();
+        List<String> list11 = new ArrayList<String>() {
+            {
+                add("aaa");
+                add("aaa");
+                add("ddd");
+                add("bbb");
+                add("fff");
+            }
+        };
+        List<String> list22 = new ArrayList<String>() {
+            {
+                add("aaa");
+                add("bbb");
+                add("ccc");
+            }
+        };
+
+        result.clear();
+        result.addAll(list11);
+        result.retainAll(list22);
+        System.out.println("交集：" + result);
+
+        // 交集简单实现
+        result.clear();
+        for (int i = 0; i < list11.size(); i++) {
+            String s = list11.get(i);
+            if (list22.contains(s)) {
+                result.add(s);
+            }
+        }
+        System.out.println(result);
+
+        result.clear();
+        result.addAll(list11);
+        result.removeAll(list22);
+        System.out.println("差集：" + result);
+
+        result.clear();
+        result.addAll(list11);
+        result.addAll(list22);
+        System.out.println("并集：" + result);
     }
 }

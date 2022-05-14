@@ -28,6 +28,36 @@ public class SetTest {
             System.out.println(it.next());
         }
         // 交集 差集 并集
+        Set<String> result = new HashSet<>();
+        Set<String> set1 = new HashSet<String>() {
+            {
+                add("aaa");
+                add("ddd");
+                add("bbb");
+                add("fff");
+            }
+        };
+        Set<String> set2 = new HashSet<String>() {
+            {
+                add("aaa");
+                add("bbb");
+                add("ccc");
+            }
+        };
 
+        result.clear();
+        result.addAll(set1);
+        result.retainAll(set2);
+        System.out.println("交集：" + result);
+
+        result.clear();
+        result.addAll(set1);
+        result.removeAll(set2);
+        System.out.println("差集：" + result);
+
+        result.clear();
+        result.addAll(set1);
+        result.addAll(set2);
+        System.out.println("并集：" + result);
     }
 }

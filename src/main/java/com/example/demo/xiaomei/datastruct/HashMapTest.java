@@ -2,6 +2,8 @@ package com.example.demo.xiaomei.datastruct;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * @author ksying
@@ -18,5 +20,8 @@ public class HashMapTest {
         map.put("eee", "aaaa");
         map.put("aaa", "aaa");
         System.out.println(map);
+
+        Map<String, String> map1 = new ConcurrentHashMap<>();
+        map1.put("sss", "fff");
     }
 }
